@@ -56,7 +56,7 @@ function generateCard(sourcePdf, result, data) {
       });
       console.log(`${chalk.red('Generating type_b cards...')}`);
       PDFMerge(type_bPdfs, {output: './output/type_b.pdf'}).then((buffer) => {
-        console.log(`${chalk.green('type_a card generation compeleted')}`);
+        console.log(`${chalk.green('type_b card generation compeleted')}`);
       });
       console.log(`${chalk.yellow('Generating type_c cards...')}`);
       PDFMerge(type_cPdfs, {output: './output/type_c.pdf'}).then((buffer) => {
@@ -83,18 +83,23 @@ function generateCard(sourcePdf, result, data) {
 // PDFMerge()
 
 csv().fromFile(csvInput).then((cardList) => {
-  const sourcePdf = './sample_pdff.pdf';
-  // const sourcePdf = './type_a_samples.pdf';
+  // const sourcePdf = './sample_pdff.pdf';
+  const sourcePdf = './input/type_a_sample.pdf';
+  const  sources = {
+    'type_a': './input/type_a_sample.pdf',
+    'type_b': './input/type_b_sample.pdf',
+    'type_c': './input/type_c_sample.pdf',
+  };
   totalOrdersCount = cardList.length - 1;
 
   cardList.map((card) => {
     const data = {
-      'Front': card.front_message.replace(')', 'o'),
+      'Front': card.front_message.replace(')', '\\)'),
       'Code': card.order_id,
-      'Inside': card.back_message.replace(')', 'o'),
+      'Inside': card.back_message.replace(')', '\\)'),
     };
     const result = './output/' + card.card_type + '/' + card.order_id + '.pdf';
-    generateCard(sourcePdf, result, data);
+    generateCard(sources[card.card_type], result, data);
   });
 });
 
