@@ -83,8 +83,8 @@ function generateCard(sourcePdf, result, data) {
 // PDFMerge()
 
 csv().fromFile(csvInput).then((cardList) => {
-  // const sourcePdf = './sample_pdff.pdf';
-  const sourcePdf = './type_a_samples.pdf';
+  const sourcePdf = './sample_pdff.pdf';
+  // const sourcePdf = './type_a_samples.pdf';
   totalOrdersCount = cardList.length - 1;
 
   cardList.map((card) => {
