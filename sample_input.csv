@@ -1,0 +1,44 @@
+gift_order_id,order_id,is_cancelled,card_type,front_message,back_message
+1,1,0,type_a,"Cuo sam da volish ruze","Nadam se da u ovome ima ruza🤖🤖🤖🤖"
+10,3,0,type_a,"Surprise :) ","Happy birthday..."
+12,5,0,type_a,"Een bos geluk! ","Voor de liefste mama en papa en voor het harde werken tijdens de verhuizing x Tessa "
+13,6,0,type_b,"Speciaal voor de liefste moes","Lieve mams,
+
+Zomaar, voor jou!
+"
+14,7,0,type_a,<3,"Happy Bday lieve Roos"
+18,15,0,type_a,"My lovely wife","Hope you're doing okay with the baby. I just want to say thank you for the strength you have been showing over the last 7 months, with or without me.
+
+Pret! :p"
+21,13,0,type_a,"Heel veel liefs ","Geniet van deze heerlijke bloemen jullie hebben ze zo verdiend! "
+22,14,0,type_b,"Super majo","Because you deserve it! x"
+24,18,0,type_c,"Gefeliciteerd Maura!","TOCH bloemen van mij ;) fijne verjaardag lieverd xx"
+27,19,0,type_a,"Een mooie bos bloemen!","Hi opa en oma,
+Zomaar een Bloomon bos voor jullie. We hopen dat jullie de bloemen mooi vinden!
+
+Met heel veel liefs,
+Devon en Steven"
+32,22,0,type_b,"My first card","Hi Francisco please make sure you print these cards right.
+
+Gr
+
+Frans"
+34,25,0,type_a,Gefeliciteerd!,"Lieve Duco & Carlijn,
+
+Veel geluk in jullie nieuwe huisje!
+
+X,
+Robin & Enza"
+39,29,0,type_a,Verrassing!,"Hi mam, hier een speciale editie bloomon bos! Geniet ervan :)
+
+xxx, Pim"
+40,28,0,type_a,"Flowers are always a good idea",emtpy
+42,30,0,type_a,"voor Fredje","Love You"
+46,37,0,type_a,"Com muito amor ...","Da pipoca para o meu amor Miguel!
+Amo-te! "
+47,38,0,type_c,"Greetings from Bloomon!","Lelies zijn rood, Delphiniums zijn blauw, Deze bloomon bos, is speciaal voor jou"
+48,39,0,type_a,"Voor de liefste oma","Voor lieve Oma!! Liefs Joor"
+50,41,0,type_c,"Voor de liefste","Because I love you long time, you deserve it powerwoman!
+
+xxx les "
+55,43,0,type_a,Flowaaahhhz,"... for the Prinsessen in Prins Hendrikkade :D"

@@ -1,0 +1,14 @@
+{
+  "name": "pdfCard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Lucas Daltro <lucasdaltro5@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "csvtojson": "^2.0.3",
+    "eslint": "^4.19.1",
+    "pdf-merge": "^1.0.2",
+    "pdffiller": "^0.0.10"
+  }
+}
