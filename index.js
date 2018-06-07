@@ -5,14 +5,6 @@ const chalk = require('chalk');
 const PDFMerge = require('pdf-merge');
 
 const csvInput = './sample_input.csv';
-// const sourcePdf = './sample_pdf.pdf';
-// const result = './result.pdf';
-
-// const data = {
-//   'Front': 'Testing Front',
-//   'Code': 'Testing Code',
-//   'Inside': 'Testing Inside',
-// };
 
 const cardModels = {
   'type_a': './sample_pdf.pdf',
@@ -20,7 +12,6 @@ const cardModels = {
   'type_c': './sample_pdf.pdf',
 };
 
-let isDone = false;
 let totalOrdersCount = 0;
 let numberOfOrdersProcessed = 0;
 const generatedPdfs = [];
@@ -32,8 +23,6 @@ function generateCard(sourcePdf, result, data) {
     } 
     if(totalOrdersCount === numberOfOrdersProcessed) {
        // Merge the pdfs by type
-      isDone = true;
-      // console.log('Time to meerrgee!');
       const type_aPdfs = [];
       const type_bPdfs = [];
       const type_cPdfs = [];
@@ -62,28 +51,13 @@ function generateCard(sourcePdf, result, data) {
       PDFMerge(type_cPdfs, {output: './output/type_c.pdf'}).then((buffer) => {
         console.log(`${chalk.green('type_c card generation compeleted')}`);
       });
-      // Merge type_a cards
-      
-      // // Merge type_b cards
-      // fs.readdirSync(testFolder).forEach(file => {
-      //   console.log(file);
-      // });
-      // // Merge type_c cards
-      // fs.readdirSync(testFolder).forEach(file => {
-      //   console.log(file);
-      // });
     } else {
       numberOfOrdersProcessed++;
     }
-    // console.log(`${chalk.green('Success!!')}`);
-    // console.log(`${chalk.yellow('The list was generated in ')}${chalk.blue(result)}`);
   });
 }
 
-// PDFMerge()
-
 csv().fromFile(csvInput).then((cardList) => {
-  // const sourcePdf = './sample_pdff.pdf';
   const sourcePdf = './input/type_a_sample.pdf';
   const  sources = {
     'type_a': './input/type_a_sample.pdf',
@@ -94,20 +68,12 @@ csv().fromFile(csvInput).then((cardList) => {
 
   cardList.map((card) => {
     const data = {
-      'Front': card.front_message.replace(')', '\\)'),
+      'Front': card.front_message,
       'Code': card.order_id,
-      'Inside': card.back_message.replace(')', '\\)'),
+      'Inside': card.back_message,
     };
     const result = './output/' + card.card_type + '/' + card.order_id + '.pdf';
     generateCard(sources[card.card_type], result, data);
   });
 });
 
-
-// pdfFiller.fillForm(sourcePdf, result, data, (err) => {
-//   if(err){
-//     console.error(`${chalk.red('Something went wrong')}${err}`);
-//   } 
-//   console.log(`${chalk.green('Success!!')}`);
-//   console.log(`${chalk.yellow('The list was generated in ')}${chalk.blue(result)}`);
-// });
